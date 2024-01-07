@@ -11,7 +11,8 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.datetime :projected_start_date
       t.datetime :end_date
       t.datetime :projected_end_date
-
+      t.datetime :deleted_at
+      
       t.timestamps
     end
 

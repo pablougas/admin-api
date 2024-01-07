@@ -10,7 +10,7 @@ class CreateLocations < ActiveRecord::Migration[7.0]
       t.string :postal_code
       t.string :route
       t.string :street_number
-
+      
       t.timestamps
     end
   end
