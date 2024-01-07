@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_26_020150) do
   create_table "companies", force: :cascade do |t|
     t.string "legal_name"
     t.string "phone"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_26_020150) do
   create_table "company_users", force: :cascade do |t|
     t.integer "company_id", null: false
     t.integer "user_id", null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_company_users_on_company_id"
@@ -82,6 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_26_020150) do
     t.datetime "projected_start_date"
     t.datetime "end_date"
     t.datetime "projected_end_date"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_projects_on_company_id"
@@ -96,6 +99,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_26_020150) do
     t.string "last_name"
     t.string "email"
     t.string "phone"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
